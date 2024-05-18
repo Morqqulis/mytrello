@@ -1,10 +1,10 @@
 'use client'
 import getUrl from '@/lib/getUrl'
 import { useBoardStore } from '@/store/BoardStore'
+import { DraggableProvidedDraggableProps, DraggableProvidedDragHandleProps } from '@hello-pangea/dnd'
 import { XCircleIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { DraggableProvidedDraggableProps, DraggableProvidedDragHandleProps } from '@hello-pangea/dnd'
 
 type Props = {
 	todo: Todo
@@ -42,7 +42,7 @@ const TodoCard = ({ todo, index, id, innerRef, draggableProps, dragHandleProps }
 				</div>
 				{imageUrl && (
 					<div className='relative h-full w-full rounded-b-md'>
-						<Image className='w-full max-w-full h-auto  rounded-b-md max-h-[250px]' src={imageUrl} loading='lazy' alt='Task image' width={200} height={100} />
+						<Image className='w-full max-w-full h-auto object-cover rounded-b-md max-h-[250px]' src={imageUrl} loading='lazy' alt='Task image' width={200} height={100} />
 					</div>
 				)}
 			</div>
